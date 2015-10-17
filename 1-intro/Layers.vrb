@@ -1,0 +1,12 @@
+Add a line.
+\begin{framed}
+\begin{verbatim}
+p + geom_point() + geom_line()
+\end{verbatim}
+\end{framed}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{Layers3}
+\end{figure}
+
+
