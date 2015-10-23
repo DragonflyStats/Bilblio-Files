@@ -1,0 +1,15 @@
+http://blog.yhathq.com/posts/ggplot-for-python.html
+
+p + geom_point(color = "red") + ggtitle("Cars") + xlab("Weight") + ylab("MPG")
+
+
+%========================================================%
+
+from ggplot import *
+
+print ggplot(meat, aes('date','beef * 2000')) + \
+    geom_line(color='coral') + \
+    scale_x_date(breaks=date_breaks('36 months'), labels='%Y') + \
+    scale_y_continuous(labels='millions')
+
+%=======================================================%
