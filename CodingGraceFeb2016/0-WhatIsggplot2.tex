@@ -8,6 +8,20 @@
 \begin{document}
 %======================================= %
 
+
+\begin{frame}
+	\begin{figure}
+\centering
+\includegraphics[width=0.45\linewidth]{ggplot2-official-hexbin-logo}
+
+\includegraphics[width=0.60\linewidth]{RPythonLogo}
+
+\end{figure}
+
+\end{frame}
+
+
+%============================================== %
 \begin{frame}
 	\Large
 	\noindent\textbf{About ggplot}
@@ -76,6 +90,13 @@ ggplot2: Elegant Graphics for Data Analysis
 \end{frame}
 
 %============================================= %
+\begin{frame}
+\begin{figure}
+\centering
+\includegraphics[width=1.1\linewidth]{visiphilia}
+\end{figure}
+\end{frame}
+%============================================= %
 
 \begin{frame}
 	
@@ -89,6 +110,8 @@ ggplot2: Elegant Graphics for Data Analysis
 
 \end{frame}
 
+
+
 %===================================== %
 \begin{frame}[fragile]
 \textbf{1. Installing ggplot}
@@ -97,15 +120,41 @@ ggplot2: Elegant Graphics for Data Analysis
 pip install ggplot
 \end{verbatim}
 \end{framed}
-N.B. Not loaded automatically with Anaconda, unlike pandas and numpy\\
-\bigskip
-\textbf{2. Getting Set Up on Jupyter Notebook}
+N.B. Not loaded automatically with Anaconda, unlike pandas and numpy
+\end{frame}
+%============================================== %
+\begin{frame}[fragile]
+	\frametitle{Upgrading Version}
+	\large
+	\begin{verbatim}
+	pip install --upgrade pip ggplot
+	\end{verbatim}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=1.1\linewidth]{setup3}
+	\end{figure}
+	
+\end{frame}
+%============================================== %
+\begin{frame}
+\textbf{2. Start the Jupyter Notebook}
+	\begin{figure}
+		\centering
+		\includegraphics[width=1.1\linewidth]{setup2}
+	\end{figure}
+	
+\end{frame}
+%============================================== %
+\begin{frame}
+\textbf{3. Getting Set Up on Jupyter Notebook}
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{jupyter1}
 \end{figure}
 
 \end{frame}
+
 %===================================== %
 \begin{frame}
 	\Large
@@ -120,14 +169,82 @@ N.B. Not loaded automatically with Anaconda, unlike pandas and numpy\\
 \begin{frame}[fragile]
 	\frametitle{Data}
 	\Large
+	\vspace{-1.4cm}
 	\begin{itemize}
 		\item ggplot has a symbiotic relationship with pandas. 
-		\item If you're planning on using ggplot, it's best to keep your data in DataFrames. 
-		\item Think of a DataFrame as a tabular data object. 
+		\item If you're planning on using ggplot, it's best to keep your data in \texttt{DataFrames}. 
+		\item Think of a \texttt{DataFrame} as a tabular data object. 
 %		\item For example, let's look at the diamonds dataset which ships with ggplot.
 	\end{itemize}
 \end{frame}
-%================================================================================== %
+%============================================= %
+\begin{frame}
+	\begin{figure}
+\centering
+\includegraphics[width=1.1\linewidth]{anscombe1}
+
+\end{figure}
+
+\end{frame}
+%============================================= %
+\begin{frame}
+	\begin{figure}
+		\centering
+		\includegraphics[width=1.1\linewidth]{anscombe2}
+		
+	\end{figure}
+	
+\end{frame}
+%============================================= % 
+\begin{frame}[fragile]
+	\large
+	\begin{framed}
+	\begin{verbatim}
+	# 1. Load Libraries
+	import os
+	import pandas as pd
+	
+	# 2. Get Current Working Directory
+	os.getcwd()
+	
+	# 3. Read in a CSV Data File
+	ansc = pd.read_csv('anscombe.csv',index_col=[0])
+	
+	# 4. Print the top of that file to inspect it
+	ansc.head()
+	\end{verbatim}
+	\end{framed}
+\end{frame}
+%============================================= %
+\begin{frame}[fragile]
+	\frametitle{Different Layour (better for out purposes)}
+\begin{figure}
+\centering
+\includegraphics[width=1.1\linewidth]{anscombe3}
+\end{figure}
+
+\end{frame}
+%============================================= %
+\begin{frame}[fragile]
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=1.0\linewidth]{anscombe4}
+	\end{figure}
+(Source: Wikipedia)
+\end{frame}
+\begin{frame}[fragile]
+\LARGE
+Try this out!
+\begin{framed}	\begin{verbatim}
+ggplot(aes(x="x", y="y"), data=aq)
+ + facet_wrap('group',scales='fixed') 
+ + geom_point()
+ + stat_smooth(method='lm')
+
+	\end{verbatim}\end{framed}
+\end{frame}
+%============================================= %
 
 \begin{frame}
 	\frametitle{ggplot - Inbuilt Data Sets}
@@ -144,17 +261,10 @@ N.B. Not loaded automatically with Anaconda, unlike pandas and numpy\\
 	\noindent \textbf{Remark:}
 	ggplot code will work on any pandas \texttt{DataFrame}. 
 \end{frame}
-%===================================== %
-\begin{frame}[fragile]
-	\Large
-	\begin{framed}
-		\begin{verbatim}
-		import pandas as pd
-		
-		meat2 = pd.melt(meat, id_vars=['date'])
-		\end{verbatim}
-	\end{framed}
+\begin{frame}
+	content...
 \end{frame}
+
 
 
 %================================================================================== %
@@ -184,6 +294,7 @@ N.B. Not loaded automatically with Anaconda, unlike pandas and numpy\\
 %===================================== %
 \begin{frame}[fragile]
 \Large
+\vspace{-0.4cm}
 \noindent \textbf{For \texttt{R}  Users}
 \begin{itemize}
 	\item  In Python, dataframe columns (i.e. variables) are specified with quotation marks
@@ -225,12 +336,21 @@ Hadley Wickham.\\
 \end{framed}
 
 \end{frame}
+\section{Workshop Set-Up}
+
+\begin{frame}
+	\begin{figure}
+		\centering
+		\includegraphics[width=1.1\linewidth]{setup1}
+	\end{figure}
+	
+\end{frame}
 
 \section{How it works}
 \begin{frame}[fragile]
 	\Large
 	\frametitle{Basic Premise}
-
+\vspace{-0.7cm}
 	\begin{itemize}
 		\item Making plots is a very repetive: draw this line, add these colored points, then add these, etc. 
 		\item Instead of re-using the same code over and over, \texttt{ggplot} implements them using a high-level but very expressive API.
@@ -273,6 +393,18 @@ Hadley Wickham.\\
 		\item We will introduce \textit{geoms} shortly
 	\end{itemize}
 	
+\end{frame}
+%===================================== %
+\begin{frame}[fragile]
+	\large
+	(Some useful preparation)
+	\begin{framed}
+		\begin{verbatim}
+		import pandas as pd
+		
+		meat2 = pd.melt(meat, id_vars=["date"])
+		\end{verbatim}
+	\end{framed}
 \end{frame}
 %================================================================================== %
 \begin{frame}[fragile]
@@ -335,15 +467,30 @@ Hadley Wickham.\\
 	\end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{qplot}
 \Large
+\vspace{-2cm}
+More!
 \begin{framed}
 \begin{verbatim}
-p+ ggtitle("Plot Title") + xlab(" X Axis Label") + ylab(" Y Axis Label")
+p + ggtitle("Plot Title") 
+  + xlab(" X Axis Label") 
+  + ylab(" Y Axis Label")
 
 \end{verbatim}
 \end{framed}
+\end{frame}
+
+\begin{frame}
+	\large
+	\noindent \textbf{Rule of Thumb}
+	\begin{itemize}
+		\item The \texttt{aes} argumetnt is for aesthetics
+		\item Essentially it identifies which variables are being used, and in what order.
+		\item The first two variables are the "X" and "Y" variable.
+		\item Anymore variables after that are typically grouping variables.
+	\end{itemize}
 \end{frame}
 %================================================================================== %
 \section{qplot}
@@ -353,7 +500,8 @@ p+ ggtitle("Plot Title") + xlab(" X Axis Label") + ylab(" Y Axis Label")
 	\Large
 \begin{itemize}
 \item \texttt{qplot} is the basic plotting function in the ggplot package, designed for quick inspections of the data.
-\item The functionality is not as expansive as with using ``ggplot".
+\item The functionality is not as expansive as with using ``\texttt{ggplot()}".
+\item For the most part, the same code works for both.
 \end{itemize}
 
 \end{frame}
@@ -401,12 +549,13 @@ geom\_dotplot	&	geom\_point	&	geom\_vline	\\ \hline
 %=============================== %
 \begin{frame}[fragile]
 \frametitle{stats}
-\Large
+\large
+\vspace{-1.5cm}
 \begin{framed}
 \begin{verbatim}
-ggplot(aes(x='date', y='beef'), data=meat) +\
-geom_line() +\
-stat_smooth(colour='blue', span=0.2)
+ggplot(aes(x="date" y="beef"), data=meat) +\
+     geom_line() +\
+     stat_smooth(colour='blue', span=0.2)
 \end{verbatim}
 \end{framed}
 \end{frame}
@@ -414,7 +563,7 @@ stat_smooth(colour='blue', span=0.2)
 \begin{frame}
 \begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{stats1}
+\includegraphics[width=1.1\linewidth]{stats1}
 \end{figure}
 \end{frame}
 %==================================== %
@@ -606,7 +755,7 @@ p + geom_histogram() + facet_wrap("cut")
 \begin{frame}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.7\linewidth]{FacetsB}
+		\includegraphics[width=1.1\linewidth]{FacetsB}
 		\caption{}
 		\label{fig:FacetsB}
 	\end{figure}
@@ -617,11 +766,13 @@ p + geom_histogram() + facet_wrap("cut")
 \begin{frame}[fragile]
 	% % Faceting 3
 	\frametitle{Faceting}
+	\large
 	\begin{framed}
 		\begin{verbatim}
-p = ggplot(diamonds, aes(x='price'))
+p = ggplot(diamonds, aes(x="price"))
+
 p + geom_density() + \
-facet_grid("cut", "clarity")
+    facet_grid("cut", "clarity")
 		\end{verbatim}
 		
 	\end{framed}
@@ -631,7 +782,7 @@ facet_grid("cut", "clarity")
 \frametitle{Faceting}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.7\linewidth]{Facet3}
+		\includegraphics[width=0.9\linewidth]{Facet3}
 		\caption{}
 		\label{fig:Facet3}
 	\end{figure}
@@ -640,11 +791,13 @@ facet_grid("cut", "clarity")
 %========================== %
 \begin{frame}[fragile]
 \frametitle{Faceting}
+\large
 	\begin{framed}
 		\begin{verbatim}
-p = ggplot(diamonds, aes(x='carat', y='price'))
-p + geom_point(alpha=0.25) + \
-facet_grid("cut", "clarity")
+p = ggplot(diamonds, aes(x="carat", y="price"))
+
+p + geom_point(alpha=0.25) +\
+    facet_grid("cut", "clarity")
 	\end{verbatim}
 	
 \end{framed}
@@ -660,24 +813,26 @@ facet_grid("cut", "clarity")
 \end{frame}
 %========================== %
 \begin{frame}[fragile]
+	\Large
 	\begin{framed}
 	\begin{verbatim}
-p  = ggplot(iris, aes("Sepal.Length", "Sepal.Width"))
-p + geom_boxplot(fill = c("lightblue")) + facet_wrap("Species")
+p  = ggplot(iris, aes("Sepal.Length", 
+    "Sepal.Width"))
+    
+p + geom_boxplot(fill = c("lightblue")) 
+    + facet_wrap("Species")
 
 	\end{verbatim}
 		
 	\end{framed}
 \end{frame}
-
+%============================================= %
 
 
 \begin{frame}
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{iris-boxplot}
-		\caption{}
-		\label{fig:iris-boxplot}
 	\end{figure}
 	
 \end{frame}
@@ -686,6 +841,7 @@ p + geom_boxplot(fill = c("lightblue")) + facet_wrap("Species")
 \section*{Scales}
 % http://sape.inf.usi.ch/quick-reference/ggplot2/scale
 \begin{frame}
+	\Large
 \noindent \textbf{Scales and Themes}
 	\begin{itemize}
 	\item ggplot2 provides a large number of scale functions
@@ -714,8 +870,8 @@ p + geom_boxplot(fill = c("lightblue")) + facet_wrap("Species")
 	\begin{framed}
 	\begin{verbatim}
 	ggplot(aes(x="date", y="beef"),meat) +\
-	geom_line() +\
-	theme_bw()
+			geom_line() +\
+			theme_bw()
 	\end{verbatim}
 	\end{framed}
 \end{frame}
