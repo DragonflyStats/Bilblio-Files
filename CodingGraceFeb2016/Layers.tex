@@ -1,0 +1,25 @@
+\documentclass{beamer}
+
+\usepackage{framed}
+\usepackage{graphicx}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+What are Geoms?
+
+Geoms are the names for the types of shapes that represent the data on the chart, and there are two main types.
+
+The geom_point is an example of geom that works on individual data points, and so is straight forward to use as already shown.
+
+geoms
+
+geom = "point" draws points to produce a scatterplot. This is the default when you supply both x and y arguments to qplot().
+
+geom = "smooth" fits a smoother to the data and displays the smooth and its standard error.
+
+geom = "boxplot" produces a box-and-whisker plot to summarise the distribution of a set of points.
+
+geom = "path" and geom = "line" draw lines between the data points. Traditionally these are used to explore relationships between time and another variable, but lines may be used to join observations connected in some other way. A line plot is constrained to produce lines that travel from left to right, while paths can go in any direction
+\end{document}
